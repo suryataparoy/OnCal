@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="OnCalApp">
+<head>
+	<title>Online Calculator</title>
+	<link rel="stylesheet" type="text/css" href="calstyle.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
+	<link href="https://fonts.googleapis.com/css?family=Lora:700" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="controller/controller.js"></script>
+</head>
+
+<body class="body" ng-controller="OnCalCtrl">
+	<div id="wrapper">
+	<h1 class="heading">Simple Calculator<br>In AngularJs</h1>
+	<section class="main">
+		
+	    <center>
+	    	<input type="text" class="textbox" ng-model="data.tes"><br>
+			<div></div>
+			<div class="res">RESULT:  {{memory}} {{operator}} {{data.tes}}</div> 
+		    <button ng-repeat="button in buttons1" class="btn btn-info" ng-click="updateoutput(button)">{{button}}</button><br>
+		    <button ng-repeat="button in buttons2" class="btn btn-info" ng-click="updateoutput(button)">{{button}}</button>
+
+		    <div class="buttongrp">
+			    <input type="button" class="same btn btn-primary" ng-click="add()" value="+">
+				<input type="button" class="same btn btn-primary" ng-click="sub()" value="-">
+				<input type="button" class="same btn btn-primary" ng-click="mul()" value="*">
+				<input type="button" class="same btn btn-primary" ng-click="div()" value="/">
+				<input type="button" class="same btn btn-primary" ng-click="calculate()" value="="><br>
+		    	<button ng-repeat="button in buttons3" class="btn btn-info" ng-click="updateoutput(button)">{{button}}</button>
+			    <button class="btn btn-warning" ng-click="clear()">CLEAR</button>
+		    </div>
+		</center>
+    </section>
+    <section class="bottom">
+		<center>
+			<div class="background">
+				<a href="http://rawgit.com/suryataparoy/OnCal/master/public/oncal.html" title="my github link" target="_blank"><i class="fa fa-github"></i></a>
+			    <a href="#" title="facebook link" target="_blank"><i class="fa fa-facebook-square fb-btn"></i></a>
+			    <a href="#" title="twitter link" target="_blank"><i class="fa fa-twitter-square twt-btn"></i></a>
+			    <a href="#" title="g+ link" target="_blank"><i class="fa fa-google-plus-square gp-btn"></i></a>
+			</div>
+			<h6>© 2015-2016 Suryatapa Roy • Licensed under MIT License • Image credit: Florian Sprenger (used with permission)</h6>
+	    </center>    
+    </section>
+    </div>
+</body>
+	<script type="text/javascript"></script>
+</html>
